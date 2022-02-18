@@ -28,12 +28,11 @@ class SearchingPage extends StatelessWidget {
                         const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2),
                     itemBuilder: (context, index) {
-                      //print(context.)
                       return Container(
                         margin: EdgeInsets.all(10.0),
                         width: 20,
                         height: 20,
-                        color: Colors.red,
+                        
                       );
                     },itemCount: context.watch<SearchBarProvider>().searchedItems.length),
               ),

@@ -16,5 +16,6 @@ class SearchBarProvider extends ChangeNotifier {
 
   void cleanSearchedItems() {
     searchedItems.clear();
+    notifyListeners();
   }
 }

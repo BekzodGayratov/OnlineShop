@@ -28,7 +28,7 @@ class SearchingButton extends StatelessWidget {
       onChanged: (v) {
         for (var item in wearableNames) {
           if (v.isEmpty) {
-            context.watch<SearchBarProvider>().searchedItems.clear();
+            context.read<SearchBarProvider>().cleanSearchedItems();
           } else if (item.toLowerCase().contains(v.toLowerCase())) {
             context.read<SearchBarProvider>().addSearchedItems(item);
           }
