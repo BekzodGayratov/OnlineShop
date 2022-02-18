@@ -14,6 +14,7 @@ class SearchingPage extends StatelessWidget {
       create: (context) => SearchBarProvider(),
       builder: (context, child) {
         return Scaffold(
+          backgroundColor: ConstantsColors.lightModeColor,
           appBar: AppBar(
             toolbarHeight: MediaQuery.of(context).size.height * 0.1,
             iconTheme: IconThemeData(color: ConstantsColors.iconThemeColor),
@@ -23,43 +24,81 @@ class SearchingPage extends StatelessWidget {
           ),
           body: FadeInUp(
             child: Column(children: [
-              Expanded(
+
+              context.watch<SearchBarProvider>().itemFound? const Center(child: Text("Found nothing"),): Expanded(
                 child: GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         mainAxisExtent:
-                            MediaQuery.of(context).size.height * 0.4),
+                            MediaQuery.of(context).size.height * 0.35),
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: EdgeInsets.symmetric(
-                          horizontal: MediaQuery.of(context).size.width * 0.04,
-                          vertical: MediaQuery.of(context).size.height * 0.04,
+                          horizontal: MediaQuery.of(context).size.width * 0.05,
+                          vertical: MediaQuery.of(context).size.height * 0.01,
                         ),
                         child: FadeInUp(
                           child: Stack(
                             children: [
                               Container(
-                                margin: EdgeInsets.only(top: MediaQuery.of(context).size.height *0.05),
-                                color: Colors.red,
+                                margin: EdgeInsets.only(
+                                    top: MediaQuery.of(context).size.height *
+                                        0.08),
                                 width: MediaQuery.of(context).size.width * 0.45,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(10.0)),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height *0.13),
-                                      child: Text("Apple",style: TextStyle(fontSize: 30.0),),
+                                      padding: EdgeInsets.only(
+                                          top: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.13,
+                                          left: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.015,
+                                          right: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.015),
+                                      child: const Text(
+                                        "Apple iPad",
+                                        style: TextStyle(
+                                            fontSize: 24.0,
+                                            fontWeight: FontWeight.w500),
+                                        maxLines: 2,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
                                     ),
-                                    Text("asdas")
+                                    SizedBox(
+                                      height:
+                                          MediaQuery.of(context).size.height *
+                                              0.01,
+                                    ),
+                                    Text(
+                                      "From \$600",
+                                      style: TextStyle(
+                                          color: ConstantsColors.themeColor,
+                                          fontSize: 17.0,
+                                          fontWeight: FontWeight.w600),
+                                      overflow: TextOverflow.ellipsis,
+                                    )
                                   ],
                                 ),
                               ),
                               Positioned(
-                                left: MediaQuery.of(context).size.width *0.06,
-                                bottom: MediaQuery.of(context).size.height * 0.15,
+                                left: MediaQuery.of(context).size.width * 0.05,
+                                bottom:
+                                    MediaQuery.of(context).size.height * 0.15,
                                 child: Container(
                                   height:
                                       MediaQuery.of(context).size.height * 0.15,
-                                  width: MediaQuery.of(context).size.width * 0.3,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.3,
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
                                           fit: BoxFit.cover,
