@@ -1,5 +1,5 @@
+import 'package:app/components/poductsComponents/products_components.dart';
 import 'package:app/constants/constants_colors.dart';
-import 'package:app/providers/bottom_navigation_provider.dart';
 import 'package:app/providers/search_bar_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -20,13 +20,19 @@ class SearchingButton extends StatelessWidget {
                 BorderRadius.circular(MediaQuery.of(context).size.height * 0.4),
             borderSide: BorderSide(color: ConstantsColors.themeColor)),
         border: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.grey),
+          borderSide: const BorderSide(color: Colors.grey),
           borderRadius:
               BorderRadius.circular(MediaQuery.of(context).size.height * 0.4),
         ),
       ),
-      onTap: () {
-       
+      onChanged: (v) {
+        for (var item in wearableNames) {
+          if (v.isEmpty) {
+            context.watch<SearchBarProvider>().searchedItems.clear();
+          } else if (item.toLowerCase().contains(v.toLowerCase())) {
+            context.read<SearchBarProvider>().addSearchedItems(item);
+          }
+        }
       },
     );
   }
