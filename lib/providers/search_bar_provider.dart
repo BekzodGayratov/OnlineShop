@@ -21,7 +21,7 @@ class SearchBarProvider extends ChangeNotifier {
   }
 
   void notFoundItems() {
-    itemFound = !itemFound;
+    itemFound = false;
     notifyListeners();
   }
 }

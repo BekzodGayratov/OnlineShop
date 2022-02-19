@@ -24,8 +24,9 @@ class SearchingPage extends StatelessWidget {
           ),
           body: FadeInUp(
             child: Column(children: [
-
-              context.watch<SearchBarProvider>().itemFound? const Center(child: Text("Found nothing"),): Expanded(
+              Text(
+                  "Found ${context.watch<SearchBarProvider>().searchedItems.length} results"),
+              Expanded(
                 child: GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
