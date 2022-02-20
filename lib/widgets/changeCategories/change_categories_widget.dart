@@ -78,7 +78,7 @@ class InkwelCategories extends StatelessWidget {
         ],
       ),
       onTap: () {
-        Navigator.pushNamed(context, '/indivudial', arguments: indexes!);
+        Navigator.pushNamed(context, '/indivudial', arguments: [indexes]);
       },
     );
   }
