@@ -22,7 +22,10 @@ class MyRouter {
       case '/previous':
         return MaterialPageRoute(builder: (context) => PreviousPage());
       case '/indivudial':
-        return MaterialPageRoute(builder: (context) => IndivudialPage(data: args as int,));
+        return MaterialPageRoute(
+            builder: (context) => IndivudialPage(
+                  data: args as List,
+                ));
       case '/':
         return MaterialPageRoute(builder: (context) => HomePage());
     }
