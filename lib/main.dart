@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Online Market",
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      initialRoute: '/getStarted',
       onGenerateRoute: _forRouter.onGenerateRoute,
     );
   }
