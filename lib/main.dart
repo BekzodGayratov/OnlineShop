@@ -2,6 +2,7 @@ import 'package:app/routes/router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Online Market",
       debugShowCheckedModeBanner: false,
-      initialRoute: '/getStarted',
+      initialRoute: '/',
       onGenerateRoute: _forRouter.onGenerateRoute,
     );
   }

@@ -1,11 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:app/components/poductsComponents/products_components.dart';
 import 'package:app/constants/constants_colors.dart';
-import 'package:app/functions/products_categories.dart';
-import 'package:app/providers/search_bar_provider.dart';
 import 'package:app/providers/tab_bar_provider.dart';
 import 'package:app/widgets/changeCategories/change_categories_widget.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

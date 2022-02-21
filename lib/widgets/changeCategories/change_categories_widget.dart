@@ -64,21 +64,20 @@ class InkwelCategories extends StatelessWidget {
               width: MediaQuery.of(context).size.width * 0.35,
               height: MediaQuery.of(context).size.height * 0.17,
               decoration: BoxDecoration(
-                image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: CachedNetworkImageProvider(
-                    productsImage(
-                        context.watch<TabBarProvider>().tabindex)[indexes!],
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: CachedNetworkImageProvider(
+                      productsImage(
+                          context.watch<TabBarProvider>().tabindex)[indexes!],
+                    ),
                   ),
-                ),
-                shape: BoxShape.circle
-              ),
+                  shape: BoxShape.circle),
             ),
           ),
         ],
       ),
       onTap: () {
-        Navigator.pushNamed(context, '/indivudial', arguments: [indexes]);
+        Navigator.pushNamed(context, '/indivudial', arguments: ["Apple iPod"]);
       },
     );
   }
